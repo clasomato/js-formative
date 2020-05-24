@@ -23,23 +23,25 @@ submitButton.onclick = function () {
     // Getting the form value
     var imageOption = document.getElementById("image").value;
 
-    if (imageOption = "birthday"){
+    if (imageOption === "birthday"){
         cardImage.src = "assets/birthday.jpg";
     }
 
-    if (imageOption = "valentines"){
+    if (imageOption === "valentines"){
         cardImage.src = "assets/valentines.jpg";
     }
 
-    if (imageOption = "christmas"){
+    if (imageOption === "christmas"){
         cardImage.src = "assets/christmas.jpg";
+    } else {
+        console.log("Image Error!")
     }
 
 
 
     // Chnaging the background colour
     // getting the card to change
-    background = document.getElementById("card");
+    var background = document.getElementById("card");
 
     // Getting the value from the form
     var backgroundOption = document.getElementById("background").value;
@@ -48,17 +50,101 @@ submitButton.onclick = function () {
     background.classList.remove("graphiteBackground");
 
     // If statements for each option
-    if (backgroundOption = "celadon") {
+    if (backgroundOption === "celadon") {
+        background.classList.remove("graphiteBackground");
+        background.classList.remove("roseBackground");
         background.classList.add("celadonBackground");
     }
 
-    if (backgroundOption = "graphite") {
+    if (backgroundOption === "graphite") {
+        background.classList.remove("celadonBackground");
+        background.classList.remove("roseBackground");
         background.classList.add("graphiteBackground");
+        console.log("Working")
     }
 
-    if (backgroundOption = "rose") {
+    if (backgroundOption === "rose") {
         background.classList.add("roseBackground");
+    } else {
+        console.log("Background Error!");
     }
 
+    chooseFont();
 
+    chooseBorder();
+
+    printMessage();
+}
+
+
+
+
+
+
+function chooseFont() {
+    var domFont = document.getElementById("h1");
+    var fontOption = document.getElementById("font").value;
+
+    domFont.classList.remove("handwriting");
+    domFont.classList.remove("sketch");
+    domFont.classList.remove("print");
+
+    if (fontOption === "handwriting") {
+        console.log("Handwriting");
+        domFont.classList.add("handwriting");
+    }
+
+    if (fontOption === "sketch") {
+        console.log("sketch");
+        domFont.classList.add("sketch");
+    }
+
+    if (fontOption === "print") {
+        console.log("print");
+        domFont.classList.add("print");
+    }
+}
+
+
+
+
+
+function chooseBorder() {
+    var domBorder = document.getElementById("borderD");
+    var borderOption = document.getElementById("border").value;
+
+    domBorder.classList.remove("noBorder");
+    domBorder.classList.remove("smallBorder");
+    domBorder.classList.remove("bigBorder");
+    domBorder.classList.remove("filledBorder");
+
+    if (borderOption === "none") {
+        console.log("none");
+        domBorder.classList.add("noneBorder");
+    }
+
+    if (borderOption === "thin") {
+        console.log("thin");
+        domBorder.classList.add("smallBorder");
+    }
+
+    if (borderOption === "think") {
+        console.log("think");
+        domBorder.classList.add("bigBorder");
+    }
+
+    if (borderOption === "filled") {
+        console.log("filled");
+        domBorder.classList.add("filledBorder");
+    }
+}
+
+
+function printMessage() {
+    domMessage = document.getElementById("messageArea");
+    message = document.getElementById("message").value;
+
+    console.log(message)
+
+    domMessage.textContent = message;
 }
