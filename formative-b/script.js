@@ -141,7 +141,7 @@ function chooseBorder() {
 
 
 function printMessage() {
-    domMessage = document.getElementById("messageArea");
+    domMessage = document.getElementById("h1");
     message = document.getElementById("message").value;
 
     console.log(message)
