@@ -1,22 +1,26 @@
-// Testing if the js is connected
-console.log("ppp");
-
-
-// Chnaging the image
-// Getting the image
-
-
-// Updating the dom
-
-
 // Getting the submit button
 var submitButton = document.getElementById('submit');
 
 // Onclick function
 submitButton.onclick = function () {
-    // Test
-    console.log("OLOOOO");
 
+
+
+
+
+    chooseImage();
+
+    backgroundChoice();
+
+    chooseFont();
+
+    chooseBorder();
+
+    printMessage();
+}
+
+
+function chooseImage() {
     // Getting the image to replace
     cardImage = document.getElementById("cardImg");
 
@@ -33,12 +37,11 @@ submitButton.onclick = function () {
 
     if (imageOption === "christmas"){
         cardImage.src = "assets/christmas.jpg";
-    } else {
-        console.log("Image Error!")
     }
+}
 
 
-
+function backgroundChoice() {
     // Chnaging the background colour
     // getting the card to change
     var background = document.getElementById("card");
@@ -65,19 +68,8 @@ submitButton.onclick = function () {
 
     if (backgroundOption === "rose") {
         background.classList.add("roseBackground");
-    } else {
-        console.log("Background Error!");
     }
-
-    chooseFont();
-
-    chooseBorder();
-
-    printMessage();
 }
-
-
-
 
 
 
